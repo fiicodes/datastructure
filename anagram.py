@@ -12,15 +12,28 @@ class Solution:
 
 
     def isAnagram(self, s: str, t: str) -> bool:
-        s_d=dict()
-        t_d=dict()
-        count=0
+        s_d={}
+        t_d={}
+       
         if len(s)!=len(t):
             return False
+       
         for i in (s):
-            s_d[i]=count+1
-        print(s_d)
+            if i in s_d:
+            
+                s_d[i]+=1
+            else:
+                s_d[i]=1
+            if i in t_d:
+            
+                t_d[i]+=1
+            else:
+                t_d[i]=1
+        if s_d==t_d:
+            return True 
+        else:
+            return False
 
         
 ob=Solution()
-(ob.isAnagram("anagram","naaram"))
+print((ob.isAnagram("cat","rat")))
