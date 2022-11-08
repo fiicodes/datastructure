@@ -36,4 +36,4 @@ class Solution:
 
         
 ob=Solution()
-print((ob.isAnagram("cat","rat")))
+print((ob.isAnagram("cat","ngaram")))

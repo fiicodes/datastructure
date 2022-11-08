@@ -69,30 +69,42 @@ from time import perf_counter
 #     return poll
 # o=outer()
 # print(o())
+#in normal decorator we are not able to access the signature and inspect the function inside the inner we will always get the inner as __nam__ to solve it we can use the wrap module
+
+from functools import wraps
 counters=dict()
 def outer(fn):
     count=0
+    @wraps(fn)
     def inner(*args,**kwargs):
         nonlocal count
         count+=1
         counters[fn.__name__]=count
         
         return fn(*args,**kwargs)
+    
     return inner
+@outer
 def add(x,y):
     return x+y
 def mult(x,y):
+    """mukdnfjkdfng"""
     return x*y
 def fac(x):
     f=1
     for i in range(2,x):
         f*=i
+
     return f
+# add=outer(add)
 
-mult=outer(mult)
-fac=outer(fac)
-print(mult(9,2))
+# mult=outer(mult)
+# fac=outer(fac)
+# print(mult(9,2))
+print(add(99,2))
 
-print(fac(4))
+# print(fac(4))
 print(counters)
-print(fac.__closure__)
+print(add.__name__)
+
+
