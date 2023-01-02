@@ -1,6 +1,6 @@
 class Solution:
     def searchInsert(self, nums: list[int], target: int) -> int:
-        low,high=0,len(nums)
+        low,high=0,len(nums)-1
         while(low<=high):
 
             mid=(low+high)//2
@@ -14,5 +14,5 @@ class Solution:
                 high=mid-1
         return low
 ob=Solution()
-print(ob.searchInsert([1,3,5,7],4))
+print(ob.searchInsert([1,3,5,6],5))
 
