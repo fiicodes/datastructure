@@ -2,29 +2,12 @@ class Solution:
     def maxProduct(self, nums: list[int]) -> int:
 
 
-        currentmax=max_global=nums[0]
-        for i in range(1,len(nums)):
-            currentmax=max((abs(nums[i]),abs(nums[i]*currentmax)))
-            if currentmax > max_global:
-                max_global=currentmax
-        return max_global
+        currentmax,currentmin=1,1
+        res=nums[0]
+        for n in nums:
+            vals = (n, n * currentmax, n * currentmin)
+            currentmax, currentmin = max(vals), min(vals)
 
-ob=Solution()
-l= [-2,3,-4]
-print(ob.maxProduct(l))
+            res = max(res, currentmax)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        return res
