@@ -11,3 +11,5 @@ class Solution:
                 return(l,r)
 o=Solution()
 print(o.twoSum(numbers =[2,7,11,15], target = 9))
+
+
