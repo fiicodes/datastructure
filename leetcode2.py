@@ -19,3 +19,4 @@ class Solution:
                 visited_numbers[num] = index
 o=Solution()
 print(o.twoSum(nums =[2,7,11,15], target = 9))
+
