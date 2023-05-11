@@ -20,6 +20,7 @@ class TextEditor:
 
     def do(self, op: str):
         args = op.split(" ")
+        print(args)
         arg0 = args[0]
         if arg0 == "1":
             self.append(args[1])
@@ -38,4 +39,3 @@ def main():
         editor.do(op)
 
 main()
-        
