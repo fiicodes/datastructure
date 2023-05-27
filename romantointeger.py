@@ -7,6 +7,4 @@ class romancode:
                 result-=r[s[i]]
             else:
                 result+=r[s[i]]
-        return result    
-o=romancode()
-print(o.converttoint(s="LVIII"))
+        return result
