@@ -5,3 +5,4 @@ class Solution:
         for i in s.split()[::-1]:
             result.append(i)
         return " ".join(result)
+    
