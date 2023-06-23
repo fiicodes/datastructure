@@ -1,19 +1,11 @@
-def twosum(arr,target):
-   result=[]
-   visited_number=dict()
-   for i in range(len(arr)):
-        no_to_searched=target-arr[i]
+def lower_case_dec(function):
+    def wrapper():
+        fun=function()
+        lower_case=fun.lower()
+        return lower_case
+    return wrapper
 
-
-        if no_to_searched in visited_number:
-            result.append((arr[i],visited_number[no_to_searched]))
-
-        else:
-            visited_number[arr[i]]=arr[i]
-   return result
-
-
-
-
-print(twosum([1,2,3,4,5,6],9))
-
+@lower_case_dec
+def myname():
+    return "HELLO FITHA!!"
+print(myname())
