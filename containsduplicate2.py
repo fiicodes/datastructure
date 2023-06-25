@@ -9,7 +9,7 @@ class Solution:
             else:
                 indc.append(i)
         print(indc)
-        
+
 
 ob=Solution()
 print(ob.containsNearbyDuplicate([1,2,3,1], k = 3))
