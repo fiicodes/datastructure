@@ -15,5 +15,3 @@ class Solution:
         root.right=self.buildTree(preorder[mid+1:],inorder[mid+1:])
         return root
 
-ob=Solution()
-print(ob.buildTree([3,9,20,15,7], [9,3,15,20,7]))
