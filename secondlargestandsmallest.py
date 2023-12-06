@@ -17,7 +17,7 @@ def getSecondOrderElements(n: int, a: [int]) -> [int]:
             if a[i] < smallest:
                 secondsmallest = smallest
                 smallest = a[i]
-            elif a[i] > smallest and a[i] < secondsmallest:
+            elif a[i] !=smallest and a[i] < secondsmallest:
                 secondsmallest = a[i]
         return secondsmallest
 
