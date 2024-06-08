@@ -11,4 +11,5 @@ def find_all_subarrays_with_sum(nums, target_sum):
         if current_sum==target_sum:
             subarrays.append(nums[start:i+1])
     return subarrays
-            
+
+
