@@ -19,5 +19,9 @@ class Solution:
             else:
                 # If the current sum is not present in the dictionary, store it with its index.
                 prefix_sum[current_sum] = i
+        print(prefix_sum)
 
         return max_length
+
+obj = Solution()
+print(obj.maxLen(8,([15,-2,2,-8,1,7,10,23])))
