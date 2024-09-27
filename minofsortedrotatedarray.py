@@ -18,3 +18,27 @@ class Solution:
 
 ob=Solution()
 print(ob.findMin([4,5,6,7,0,1,2],))
+
+
+##Another method
+
+class Solution:
+    def findMin(self, nums: list[int]) -> int:
+        res = nums[0]
+        l = 0
+        h = len(nums) - 1
+        if nums[l] <= nums[h]:
+            return nums[l]
+        while (l <= h):
+            mid = (l + h) // 2
+            if mid > 0:
+                if nums[mid] < nums[mid - 1]:
+                    return nums[mid]
+            if mid < len(nums) - 1:
+                if nums[mid] > nums[mid + 1]:
+                    return nums[mid + 1]
+            if nums[mid] >= nums[l]:
+                l = mid + 1
+            else:
+                h = mid - 1
+
