@@ -1,0 +1,23 @@
+class Solution:
+    def countPalindromicSubsequence(self, s: str) -> int:
+        res = set() #(middle_c, outer_i)
+        left = set()
+        right = Counter(s)
+        for mid in s:
+            right[mid]-=1
+            for i in left:
+                if right[i]> 0:
+                    res.add((mid, i))
+            left.add(mid)
+        return len(res)
+
+##for left use left set
+## for right char use hashmpa
+## for mid use loop
+
+
+
+      
+
+
+        
